@@ -23,6 +23,5 @@ class TS_Scrolling : DriverInit() {
 
 
 
-        driver!!.findElement(By.id("Archivos")).click()
     }
 }
