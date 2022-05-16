@@ -16,31 +16,13 @@ class TS_Scrolling : DriverInit() {
 
     @Test
     fun scrollDown() {
-        // Navigate to view option
-        driver!!.findElement(By.xpath("//android.widget.TextView[@content-desc='Views']")).click()
+        driver!!.navigate().to("https://www.google.com")
+        driver!!.findElement(By.id("buscar")).sendKeys("panel sistemas")
 
-        // Scrolling down method
-        fun scrollToBottom() {
-            val dim: Dimension = driver!!.manage().window().size
-            val height = dim.getHeight()
-            val width = dim.getWidth()
-            val x = width / 2
-            val topY = (height * 0.80).toInt()
-            val bottomY = (height * 0.20).toInt()
-            val startPoint = PointOption.point(x, topY)
-            val endPoint = PointOption.point (x, bottomY)
-            val ts: TouchAction<*> = TouchAction(driver)
-            ts.press(startPoint).moveTo(endPoint).release().perform()
-        }
 
-        // Using scrolling down method
-        scrollToBottom()
 
-        // Set an explicit FluentWait every 5000 milliseconds during 60 seconds
-         val wait = WebDriverWait(driver, 60, 5000)
-         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@content-desc=\"ImageView\"]")))
 
-        // Enter to ImageView option
-        driver!!.findElement(By.xpath("//android.widget.TextView[@content-desc=\"ImageView\"]")).click()
+
+        driver!!.findElement(By.id("Archivos")).click()
     }
 }

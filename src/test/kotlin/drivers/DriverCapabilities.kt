@@ -7,12 +7,15 @@ class DriverCapabilities {
     companion object {
         fun androidBaseCapabilities(): DesiredCapabilities {
             val caps = DesiredCapabilities()
-            val app = "src/test/resources/ApiDemos-debug.apk"
+            val app = "/Users/Fer/Library/Developer/Xcode/DerivedData/WebDriverAgent-fxmsedpwfaalxlbcwefbceeuodem/Build/Products/Debug-iphonesimulator/IntegrationApp.app"
             val appObject = File(app)
-            caps.setCapability("platformName", "android")
-            caps.setCapability("appium:platformVersion", "11")
-            caps.setCapability("appium:deviceName", "sdk_gphone_arm64")
-            caps.setCapability("appium:automationName", "UiAutomator2")
+            caps.setCapability("platformName", "iOS")
+            caps.setCapability("platformVersion", "15.2")
+            caps.setCapability("deviceName", "iPhone 8")
+
+
+
+
             caps.setCapability("app", appObject.absolutePath)
             return caps
         }
